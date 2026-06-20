@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Examen Blanc Hors Circulation – Permis CE</title>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#f4f6f8;
+}
+
+header{
+background:#1565c0;
+color:white;
+text-align:center;
+padding:16px;
+font-size:22px;
+font-weight:bold;
+}
+
+.headerBar{
+    display:flex;
+    align-items:center;
+    background:#1565c0;
+    color:white;
+    padding:10px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.title{
+    flex:1;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.homeBtn{
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.homeBtn img{
+    width:28px;
+    height:28px;
+    object-fit:contain;
+}
+
+.container{
+padding:15px;
+max-width:700px;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:15px;
+margin-bottom:15px;
+border-radius:10px;
+box-shadow:0 2px 6px rgba(0,0,0,0.15);
+}
+
+.chronoBox{
+text-align:center;
+margin-top:10px;
+}
+
+.chrono{
+font-size:36px;
+font-weight:bold;
+margin-bottom:8px;
+}
+
+.chronoStart{
+background:#43a047;
+color:white;
+border:none;
+padding:14px;
+border-radius:8px;
+font-size:18px;
+width:30%;
+}
+
+.chronoStop{
+background:#d32f2f;
+color:white;
+border:none;
+padding:14px;
+border-radius:8px;
+font-size:18px;
+width:30%;
+}
+
+.chronoReset{
+background:#757575;
+color:white;
+border:none;
+padding:14px;
+border-radius:8px;
+font-size:18px;
+width:30%;
+}
+
+.buttons{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin-top:8px;
+}
+
+.btn{
+flex:1;
+padding:14px;
+font-size:18px;
+border:none;
+border-radius:8px;
+background:#e0e0e0;
+}
+
+.btn.selected{
+background:#1565c0;
+color:white;
+}
+
+.btn.elim{
+background:#bdbdbd;
+color:white;
+}
+
+.btn.elim.selected{
+background:#d32f2f;
+}
+
+input, textarea{
+width:100%;
+padding:12px;
+margin-top:6px;
+margin-bottom:10px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+.result{
+font-size:24px;
+font-weight:bold;
+text-align:center;
+}
+
+.result.ok{
+color:#2e7d32;
+}
+
+.result.bad{
+color:#c62828;
+}
+
+.send{
+width:100%;
+padding:16px;
+font-size:20px;
+border:none;
+border-radius:10px;
+background:#43a047;
+color:white;
+margin-top:10px;
+}
+
+.new{
+width:100%;
+padding:16px;
+font-size:20px;
+border:none;
+border-radius:10px;
+background:#f57c00;
+color:white;
+margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="headerBar">
+
+<a href="index.html" class="homeBtn">
+    <img src="home.png" alt="Accueil">
+</a>
+
+<div class="title">
+    Examen Blanc Hors Circulation – Permis CE
+</div>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+Nom<input id="nom">
+Prénom<input id="prenom">
+Email<input id="email">
+</div>
+
+<div class="card">
+<h3>Interrogation écrite</h3>
+<div class="buttons" data-field="fiche">
+<button class="btn">0</button>
+<button class="btn">1</button>
+<button class="btn">2</button>
+<button class="btn">3</button>
+<button class="btn elim">E</button>
+</div>
+</div>
+
+<div class="card">
+<h3>1-2-3 Immobilisation / Documents / Cabine</h3>
+<div class="buttons" data-field="bloc123">
+<button class="btn">0</button>
+<button class="btn">1</button>
+</div>
+</div>
+
+<div class="card">
+<h3>4 - Contrôles tracteur</h3>
+
+Carrosserie / vitrage
+<div class="buttons" data-field="carrosserie">
+<button class="btn">0</button><button class="btn">1</button>
+</div>
+
+Roues
+<div class="buttons" data-field="roues">
+<button class="btn">0</button><button class="btn">1</button>
+</div>
+
+Taches
+<div class="buttons" data-field="taches">
+<button class="btn">0</button><button class="btn">1</button>
+</div>
+
+Chargement
+<div class="buttons" data-field="chargement">
+<button class="btn">0</button><button class="btn">1</button>
+</div>
+
+</div>
+
+<div class="card">
+<h3>5 - Contrôles remorque</h3>
+
+Caisse
+<div class="buttons" data-field="caisse">
+<button class="btn">0</button><button class="btn">1</button>
+</div>
+
+Roues
+<div class="buttons" data-field="rroues">
+<button class="btn">0</button><button class="btn">1</button>
+</div>
+
+Chargement
+<div class="buttons" data-field="rchargement">
+<button class="btn">0</button><button class="btn">1</button>
+</div>
+
+</div>
+
+<div class="card">
+<h3>6 - Mise en marche moteur</h3>
+<div class="buttons" data-field="moteur">
+<button class="btn">0</button>
+<button class="btn">1</button>
+</div>
+</div>
+
+<div class="card">
+
+<h3>7 - Positionnement du véhicule tracteur</h3>
+
+<input type="range" id="positionnement" min="1" max="5" value="1" oninput="majPositionnement()">
+
+<div id="positionLabel">1 tentative</div>
+
+</div>
+
+<div class="card">
+
+<h3>8 - Compatibilité</h3>
+<div class="buttons" data-field="compat">
+<button class="btn">0</button>
+<button class="btn">1</button>
+<button class="btn">2</button>
+</div>
+
+<h3>9 - Attelage</h3>
+<div class="buttons" data-field="attelage">
+<button class="btn">0</button>
+<button class="btn">1</button>
+<button class="btn">2</button>
+<button class="btn elim">E</button>
+</div>
+
+<h3>10 - Dimensions / poids</h3>
+<div class="buttons" data-field="dimensions">
+<button class="btn">0</button>
+<button class="btn">1</button>
+</div>
+
+<h3>11 - Feux</h3>
+<div class="buttons" data-field="feux">
+<button class="btn">0</button>
+<button class="btn">1</button>
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>12 - Thème</h3>
+<div class="buttons" data-field="theme">
+<button class="btn">0</button>
+<button class="btn">1</button>
+<button class="btn">2</button>
+<button class="btn">3</button>
+</div>
+
+<h3>13 - Interrogation orale</h3>
+<div class="buttons" data-field="orale">
+<button class="btn">1</button>
+<button class="btn">2</button>
+<button class="btn">3</button>
+<button class="btn elim">E</button>
+</div>
+
+<h3>14 - Freinage</h3>
+<div class="buttons" data-field="frein">
+<button class="btn">1</button>
+<button class="btn">2</button>
+<button class="btn">3</button>
+<button class="btn elim">E</button>
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Manœuvre 1</h3>
+
+<div class="buttons" data-field="m1">
+<button class="btn">Réussie</button>
+<button class="btn elim">Échec</button>
+</div>
+
+<div class="chronoBox">
+
+<div id="timer1" class="chrono">00:00</div>
+
+<button class="chronoStart" onclick="startTimer(1)">▶ Départ</button>
+<button class="chronoStop" onclick="stopTimer(1)">■ Stop</button>
+<button class="chronoReset" onclick="resetTimer(1)">↺ Reset</button>
+
+</div>
+
+
+<h3 style="margin-top:20px;">Manœuvre 2</h3>
+
+<div class="buttons" data-field="m2">
+<button class="btn">Réussie</button>
+<button class="btn elim">Échec</button>
+</div>
+
+<div class="chronoBox">
+
+<div id="timer2" class="chrono">00:00</div>
+
+<button class="chronoStart" onclick="startTimer(2)">▶ Départ</button>
+<button class="chronoStop" onclick="stopTimer(2)">■ Stop</button>
+<button class="chronoReset" onclick="resetTimer(2)">↺ Reset</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>15 - Dételage</h3>
+<div class="buttons" data-field="detelage">
+<button class="btn">0</button>
+<button class="btn">1</button>
+<button class="btn">2</button>
+<button class="btn elim">E</button>
+</div>
+
+<h3>Gestes et postures</h3>
+<div class="buttons" data-field="posture">
+<button class="btn">0</button>
+<button class="btn">1</button>
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Commentaire</h3>
+<textarea id="commentaire"></textarea>
+
+</div>
+
+<div class="card">
+
+<div id="result" class="result">Total : 0 / 30</div>
+
+<button class="send" onclick="envoyer()">Envoyer résultat</button>
+
+<button class="new" onclick="nouvelEleve()">Nouvel élève</button>
+
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+
+(function(){
+emailjs.init("GNBoUegN9wFfZgJ8M");
+})();
+
+let notes={}
+
+document.querySelectorAll(".buttons").forEach(group=>{
+
+let field=group.dataset.field
+
+group.querySelectorAll(".btn").forEach(btn=>{
+
+btn.onclick=()=>{
+
+group.querySelectorAll(".btn").forEach(b=>b.classList.remove("selected"))
+
+btn.classList.add("selected")
+
+notes[field]=btn.innerText
+
+calculer()
+
+}
+
+})
+
+})
+
+let timers={1:0,2:0}
+let intervals={}
+let running={}
+
+function formatTime(sec){
+let m=Math.floor(sec/60)
+let s=sec%60
+return String(m).padStart(2,"0")+":"+String(s).padStart(2,"0")
+}
+
+function startTimer(id){
+
+if(running[id]) return
+
+running[id]=true
+
+intervals[id]=setInterval(function(){
+
+timers[id]++
+
+document.getElementById("timer"+id).innerText=formatTime(timers[id])
+
+},1000)
+
+}
+
+function stopTimer(id){
+
+running[id]=false
+
+clearInterval(intervals[id])
+
+notes["temps_m"+id]=formatTime(timers[id])
+
+beep()
+
+}
+
+function resetTimer(id){
+
+running[id]=false
+
+clearInterval(intervals[id])
+
+timers[id]=0
+
+document.getElementById("timer"+id).innerText="00:00"
+
+}
+
+function beep(){
+
+let ctx=new(window.AudioContext||window.webkitAudioContext)()
+
+let osc=ctx.createOscillator()
+
+osc.type="sine"
+
+osc.connect(ctx.destination)
+
+osc.start()
+
+setTimeout(()=>osc.stop(),150)
+
+}
+
+function majPositionnement(){
+
+let v=parseInt(document.getElementById("positionnement").value)
+
+let label=document.getElementById("positionLabel")
+
+if(v<5){
+label.innerText=v+" tentative(s)"
+notes.position=v
+}
+else{
+label.innerText="5+ tentatives (éliminatoire)"
+notes.position=5
+}
+
+calculer()
+
+}
+
+function calculer(){
+
+let res=document.getElementById("result")
+
+if(Object.values(notes).includes("E") || notes.position===5){
+
+res.innerText="ÉLIMINÉ"
+
+res.className="result bad"
+
+return
+
+}
+
+let total=0
+
+for(let key in notes){
+
+if(key==="position" || key.startsWith("temps_")) continue
+
+let v=parseInt(notes[key])
+
+if(!isNaN(v)) total+=v
+
+}
+
+let manoeuvreOK=(notes.m1==="Réussie"||notes.m2==="Réussie")
+
+let statut="INSUFFISANT"
+
+if(total>=25 && manoeuvreOK) statut="FAVORABLE"
+
+res.innerText="Total : "+total+" / 30 — "+statut
+
+res.className= statut==="FAVORABLE" ? "result ok":"result bad"
+
+}
+
+function construireResultat(){
+
+let lignes=[]
+
+lignes.push("Interrogation écrite : "+(notes.fiche || "-"))
+lignes.push("1-2-3. Immobilisation / Documents / Cabine : "+(notes.bloc123 || "-"))
+lignes.push("4. Contrôles véhicule :")
+lignes.push("Carrosserie / vitrage : "+(notes.carrosserie || "-"))
+lignes.push("Roues tracteur : "+(notes.roues || "-"))
+lignes.push("Taches : "+(notes.taches || "-"))
+lignes.push("Chargement tracteur : "+(notes.chargement || "-"))
+lignes.push("5. Contrôles remorque :")
+lignes.push("Caisse remorque : "+(notes.caisse || "-"))
+lignes.push("Roues remorque : "+(notes.rroues || "-"))
+lignes.push("Chargement remorque : "+(notes.rchargement || "-"))
+
+lignes.push("6. Mise en marche moteur : "+(notes.moteur || "-"))
+
+if(notes.position){
+if(notes.position<5)
+lignes.push("7. Positionnement : "+notes.position+" tentative(s)")
+else
+lignes.push("7. Positionnement : 5+ tentatives (éliminatoire)")
+}
+
+lignes.push("8. Compatibilité : "+(notes.compat || "-"))
+lignes.push("9. Attelage : "+(notes.attelage || "-"))
+lignes.push("10. Dimensions / poids : "+(notes.dimensions || "-"))
+lignes.push("11. Feux : "+(notes.feux || "-"))
+
+lignes.push("12. Thème : "+(notes.theme || "-"))
+lignes.push("13. Interrogation orale : "+(notes.orale || "-"))
+lignes.push("14. Freinage : "+(notes.frein || "-"))
+
+lignes.push("Manœuvre 1 : "+(notes.m1||"-"))
+if(notes.temps_m1) lignes.push("Temps manœuvre 1 : "+notes.temps_m1)
+
+lignes.push("Manœuvre 2 : "+(notes.m2||"-"))
+if(notes.temps_m2) lignes.push("Temps manœuvre 2 : "+notes.temps_m2)
+
+lignes.push("15. Dételage : "+(notes.detelage || "-"))
+lignes.push("Gestes et postures : "+(notes.posture || "-"))
+
+let total=0
+
+for(let key in notes){
+if(key==="position" || key.startsWith("temps_")) continue
+let v=parseInt(notes[key])
+if(!isNaN(v)) total+=v
+}
+
+let manoeuvreOK=(notes.m1==="Réussie"||notes.m2==="Réussie")
+
+let statut="INSUFFISANT"
+
+if(Object.values(notes).includes("E") || notes.position===5)
+statut="ELIMINE"
+
+else if(total>=25 && manoeuvreOK)
+statut="FAVORABLE"
+
+let message="RÉSULTAT EXAMEN BLANC\n\n"
+
+message+=lignes.join("\n")
+
+message+="\n\nTotal : "+total+" / 30"
+message+="\nRésultat : "+statut
+
+let commentaire=document.getElementById("commentaire").value
+
+if(commentaire)
+message+="\n\nCommentaire :\n"+commentaire
+
+return message
+
+}
+
+function envoyer(){
+
+let params={
+
+prenom:document.getElementById("prenom").value,
+
+email:document.getElementById("email").value,
+
+resultat:construireResultat()
+
+}
+
+emailjs.send("service_9mvyi0i","template_z3p6rhk",params)
+
+.then(()=>alert("Résultat envoyé"))
+
+.catch(err=>alert(err.text))
+
+}
+
+function nouvelEleve(){
+
+notes={}
+
+document.querySelectorAll("input,textarea").forEach(i=>i.value="")
+
+document.querySelectorAll(".btn").forEach(b=>b.classList.remove("selected"))
+
+document.getElementById("result").innerText="Total : 0 / 30"
+
+timers={1:0,2:0}
+running={}
+
+clearInterval(intervals[1])
+clearInterval(intervals[2])
+
+document.getElementById("timer1").innerText="00:00"
+document.getElementById("timer2").innerText="00:00"
+
+}
+
+</script>
+
+</body>
+</html>

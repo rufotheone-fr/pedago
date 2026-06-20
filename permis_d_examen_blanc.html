@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Examen Blanc Hors Circulation – Permis D</title>
+
+<style>
+body{font-family:Arial;margin:0;background:#f3f5f7;}
+header{background:#1565c0;color:white;padding:15px;text-align:center;font-size:22px;font-weight:bold;}
+.container{padding:15px;max-width:700px;margin:auto;}
+.chronoBox{
+text-align:center;
+margin-top:10px;
+}
+
+.headerBar{
+    display:flex;
+    align-items:center;
+    background:#1565c0;
+    color:white;
+    padding:10px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.title{
+    flex:1;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.homeBtn{
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.homeBtn img{
+    width:28px;
+    height:28px;
+    object-fit:contain;
+}
+
+.chrono{
+font-size:36px;
+font-weight:bold;
+margin-bottom:8px;
+}
+
+.chronoStart{
+background:#43a047;
+color:white;
+border:none;
+padding:14px;
+border-radius:8px;
+font-size:18px;
+width:30%;
+}
+
+.chronoStop{
+background:#d32f2f;
+color:white;
+border:none;
+padding:14px;
+border-radius:8px;
+font-size:18px;
+width:30%;
+}
+
+.chronoReset{
+background:#757575;
+color:white;
+border:none;
+padding:14px;
+border-radius:8px;
+font-size:18px;
+width:30%;
+}
+.card{background:white;padding:15px;margin-bottom:15px;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+h3{margin-top:0;}
+.sub{margin-top:10px;font-size:14px;}
+.buttons{display:flex;gap:8px;margin-top:6px;flex-wrap:wrap;}
+.btn{flex:1;padding:14px;font-size:18px;border:none;border-radius:8px;background:#e0e0e0;}
+.btn.selected{background:#1565c0;color:white;}
+.btn.elim{background:#bdbdbd;color:white;}
+.btn.elim.selected{background:#d32f2f;}
+input, textarea{
+width:100%;
+padding:12px;
+margin-top:6px;
+margin-bottom:10px;
+border-radius:6px;
+border:1px solid #ccc;
+font-family:Arial;
+}
+.result{font-size:24px;text-align:center;font-weight:bold;margin-top:10px;}
+.result.favorable{color:#43a047;}
+.result.insuffisant{color:#d32f2f;}
+.send{width:100%;padding:16px;font-size:20px;border:none;border-radius:10px;background:#43a047;color:white;margin-top:10px;}
+.new{width:100%;padding:16px;font-size:20px;border:none;border-radius:10px;background:#f57c00;color:white;margin-top:10px;}
+</style>
+</head>
+
+<body>
+<header class="headerBar">
+
+<a href="index.html" class="homeBtn">
+    <img src="home.png" alt="Accueil">
+</a>
+
+<div class="title">
+    Examen Blanc Hors Circulation – Permis D
+</div>
+
+</header>
+<div class="container">
+
+<!-- Informations élève -->
+<div class="card">
+Nom<input id="nom">
+Prénom<input id="prenom">
+Email<input id="email">
+</div>
+
+<!-- Interrogation écrite -->
+<div class="card">
+<h3>0 - Interrogation écrite</h3>
+<div class="buttons" data-field="fiche">
+<button class="btn">0</button><button class="btn">1</button><button class="btn">2</button><button class="btn">3</button><button class="btn elim">E</button>
+</div>
+</div>
+
+<!-- Bloc 1-2-3 -->
+<div class="card">
+<h3>1-2-3 : Immobilisation / Documents / Intérieur</h3>
+<div class="buttons" data-field="bloc123">
+<button class="btn">0</button><button class="btn">1</button>
+</div>
+</div>
+
+<!-- Contrôles véhicule -->
+<div class="card">
+<h3>4 - Contrôles véhicule</h3>
+<div class="sub">Feux</div><div class="buttons" data-field="feux"><button class="btn">0</button><button class="btn">1</button></div>
+<div class="sub">État carrosserie / cabine / vitrage</div><div class="buttons" data-field="carrosserie"><button class="btn">0</button><button class="btn">1</button></div>
+<div class="sub">Annonce dimensions et poids</div><div class="buttons" data-field="dimensions"><button class="btn">0</button><button class="btn">1</button></div>
+<div class="sub">Roues</div><div class="buttons" data-field="roues"><button class="btn">0</button><button class="btn">1</button></div>
+<div class="sub">Taches sous véhicule</div><div class="buttons" data-field="taches"><button class="btn">0</button><button class="btn">1</button></div>
+<div class="sub">Chargement</div><div class="buttons" data-field="chargement"><button class="btn">0</button><button class="btn">1</button></div>
+</div>
+
+<!-- Thème, orale, moteur, frein, gestes -->
+<div class="card">
+<h3>5 - Thème</h3><div class="buttons" data-field="theme"><button class="btn">0</button><button class="btn">1</button><button class="btn">2</button><button class="btn">3</button></div>
+<h3>6 - Interrogation orale</h3><div class="buttons" data-field="orale"><button class="btn">1</button><button class="btn">2</button><button class="btn">3</button><button class="btn elim">E</button></div>
+<h3>7 - Mise en marche moteur / installation / portes</h3><div class="buttons" data-field="moteur"><button class="btn">0</button><button class="btn">1</button></div>
+<h3>8 - Vérification des systèmes de freinage</h3><div class="buttons" data-field="frein"><button class="btn">1</button><button class="btn">2</button><button class="btn">3</button><button class="btn elim">E</button></div>
+<h3>Gestes et postures</h3><div class="buttons" data-field="posture"><button class="btn">0</button><button class="btn">1</button></div>
+</div>
+
+<!-- Manœuvres -->
+<div class="card">
+
+<h3>Manœuvre 1</h3>
+
+<div class="buttons" data-field="m1">
+<button class="btn">Réussie</button>
+<button class="btn elim">Échec</button>
+</div>
+
+<div class="chronoBox">
+
+<div id="timer1" class="chrono">00:00</div>
+
+<button class="chronoStart" onclick="startTimer(1)">▶ Départ</button>
+<button class="chronoStop" onclick="stopTimer(1)">■ Stop</button>
+<button class="chronoReset" onclick="resetTimer(1)">↺ Reset</button>
+
+</div>
+
+
+<h3 style="margin-top:20px;">Manœuvre 2</h3>
+
+<div class="buttons" data-field="m2">
+<button class="btn">Réussie</button>
+<button class="btn elim">Échec</button>
+</div>
+
+<div class="chronoBox">
+
+<div id="timer2" class="chrono">00:00</div>
+
+<button class="chronoStart" onclick="startTimer(2)">▶ Départ</button>
+<button class="chronoStop" onclick="stopTimer(2)">■ Stop</button>
+<button class="chronoReset" onclick="resetTimer(2)">↺ Reset</button>
+
+</div>
+
+</div>
+
+<!-- Commentaires -->
+<div class="card">
+<h3>Commentaire</h3>
+<textarea id="commentaire" placeholder="Commentaire éventuel pour le stagiaire"></textarea>
+</div>
+
+<!-- Résultat et boutons -->
+<div class="card">
+<div class="result" id="result">Total : 0 / 21</div>
+<button class="send" onclick="envoyer()">Envoyer résultat</button>
+<button class="new" onclick="nouvelEleve()">Nouvel élève</button>
+</div>
+</div>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+(function(){emailjs.init("GNBoUegN9wFfZgJ8M");})();
+</script>
+
+<script>
+let timers={1:0,2:0}
+let intervals={}
+let running={}
+
+function formatTime(sec){
+let m=Math.floor(sec/60)
+let s=sec%60
+return String(m).padStart(2,"0")+":"+String(s).padStart(2,"0")
+}
+
+function startTimer(id){
+
+if(running[id]) return
+
+running[id]=true
+
+intervals[id]=setInterval(function(){
+
+timers[id]++
+
+document.getElementById("timer"+id).innerText=formatTime(timers[id])
+
+},1000)
+
+}
+
+function stopTimer(id){
+
+running[id]=false
+
+clearInterval(intervals[id])
+
+window["temps_m"+id]=formatTime(timers[id])
+
+beep()
+
+}
+
+function resetTimer(id){
+
+running[id]=false
+
+clearInterval(intervals[id])
+
+timers[id]=0
+
+document.getElementById("timer"+id).innerText="00:00"
+
+}
+
+function beep(){
+
+let ctx=new(window.AudioContext||window.webkitAudioContext)()
+
+let osc=ctx.createOscillator()
+
+osc.type="sine"
+
+osc.connect(ctx.destination)
+
+osc.start()
+
+setTimeout(()=>osc.stop(),150)
+
+}
+let notes={}
+document.querySelectorAll(".buttons").forEach(group=>{
+    let field=group.dataset.field
+    group.querySelectorAll(".btn").forEach(btn=>{
+        btn.onclick=()=>{
+            group.querySelectorAll(".btn").forEach(b=>b.classList.remove("selected"))
+            btn.classList.add("selected")
+            notes[field]=btn.innerText
+            calculer()
+        }
+    })
+})
+
+function calculer(){
+    let resultEl=document.getElementById("result")
+    if(Object.values(notes).includes("E")){
+        resultEl.innerText="ÉLIMINÉ"
+        resultEl.className="result insuffisant"
+        return
+    }
+
+    let total=0
+    for(let key in notes){
+        let v=parseInt(notes[key])
+        if(!isNaN(v)){
+            if(key==="bloc123" && v>1) v=1
+            total+=v
+        }
+    }
+
+    let manoeuvreOK=(notes.m1==="Réussie" || notes.m2==="Réussie")
+    let resultatFinal="INSUFFISANT"
+    if(total>16 && manoeuvreOK) resultatFinal="FAVORABLE"
+
+    resultEl.innerText="Total : "+total+" / 21 — "+resultatFinal
+    resultEl.className=(resultatFinal==="FAVORABLE")?"result favorable":"result insuffisant"
+}
+
+function construireResultatComplet(){
+    let lines=[]
+    lines.push("Interrogation écrite : "+(notes.fiche||"-"))
+    lines.push("1-2-3. Immobilisation/Documents/Intérieur : "+(notes.bloc123||"-"))
+    lines.push("4. Contrôles véhicule :")
+    lines.push("  Feux : "+(notes.feux||"-"))
+    lines.push("  Carrosserie / cabine / vitrage : "+(notes.carrosserie||"-"))
+    lines.push("  Dimensions / poids : "+(notes.dimensions||"-"))
+    lines.push("  Roues : "+(notes.roues||"-"))
+    lines.push("  Taches sous véhicule : "+(notes.taches||"-"))
+    lines.push("  Chargement : "+(notes.chargement||"-"))
+    lines.push("5. Thème : "+(notes.theme||"-"))
+    lines.push("6. Interrogation orale : "+(notes.orale||"-"))
+    lines.push("7. Mise en marche moteur / installation / portes : "+(notes.moteur||"-"))
+    lines.push("8. Vérification systèmes freinage : "+(notes.frein||"-"))
+    lines.push("Gestes et postures : "+(notes.posture||"-"))
+    lines.push("Manœuvre 1 : "+(notes.m1||"-"))
+	if(window.temps_m1) lines.push("Temps manœuvre 1 : "+window.temps_m1)
+	lines.push("Manœuvre 2 : "+(notes.m2||"-"))
+	if(window.temps_m2) lines.push("Temps manœuvre 2 : "+window.temps_m2)
+
+    // Total et résultat
+    let total=0
+    for(let key in notes){
+        let v=parseInt(notes[key])
+        if(!isNaN(v)){
+            if(key==="bloc123" && v>1) v=1
+            total+=v
+        }
+    }
+    let manoeuvreOK=(notes.m1==="Réussie" || notes.m2==="Réussie")
+    let resultatFinal="INSUFFISANT"
+    if(Object.values(notes).includes("E")) resultatFinal="ÉLIMINÉ"
+    else if(total>16 && manoeuvreOK) resultatFinal="FAVORABLE"
+    lines.push("\nTotal : "+total+" / 21 — "+resultatFinal)
+
+let commentaire=document.getElementById("commentaire").value
+
+if(commentaire){
+    lines.push("\nCommentaire :")
+    lines.push(commentaire)
+}
+
+return lines.join("\n")
+}
+
+function envoyer(){
+    let params={
+        prenom: document.getElementById("prenom").value,
+        email: document.getElementById("email").value,
+        resultat: construireResultatComplet()
+    }
+    emailjs.send("service_5i0mw8s","template_z3p6rhk",params)
+    .then(function(){alert("Résultat envoyé !")})
+    .catch(function(err){alert("Erreur : "+err.text)})
+}
+
+function nouvelEleve(){
+    notes={}
+    document.querySelectorAll("input, textarea").forEach(i=>i.value="")
+    document.querySelectorAll(".btn").forEach(b=>b.classList.remove("selected"))
+    let res=document.getElementById("result")
+    res.innerText="Total : 0 / 21"
+    res.className="result"
+	clearInterval(intervals[1])
+clearInterval(intervals[2])
+
+timers={1:0,2:0}
+running={}
+
+document.getElementById("timer1").innerText="00:00"
+document.getElementById("timer2").innerText="00:00"
+}
+</script>
+</body>
+</html>

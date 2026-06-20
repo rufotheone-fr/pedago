@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Pistes</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<script defer data-domain="sps-pedago2.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script>
+<script src="https://tiiny.host/ad-script.js"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+}
+
+body{
+background:#f4f6f9;
+}
+
+.header{
+background:linear-gradient(135deg,#f44336,#c62828);
+color:white;
+padding:25px;
+text-align:center;
+box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.header h1{
+font-size:2rem;
+font-weight:800;
+}
+
+.container{
+max-width:800px;
+margin:auto;
+padding:20px 15px 40px;
+}
+
+.section-title{
+margin:25px 0 15px;
+font-size:1.25rem;
+font-weight:800;
+color:#334155;
+}
+
+.card{
+background:white;
+border-radius:22px;
+padding:20px;
+margin-bottom:15px;
+box-shadow:0 6px 20px rgba(0,0,0,.08);
+}
+
+.card h2{
+font-size:1.15rem;
+margin-bottom:15px;
+color:#0f172a;
+}
+
+.btn{
+display:block;
+width:100%;
+
+padding:14px;
+
+border:none;
+border-radius:14px;
+
+background:linear-gradient(135deg,#2196f3,#1565c0);
+
+color:white;
+font-size:1rem;
+font-weight:700;
+
+cursor:pointer;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+}
+
+.back{
+display:flex;
+justify-content:center;
+margin-top:35px;
+}
+
+.back a{
+background:#334155;
+color:white;
+text-decoration:none;
+padding:15px 25px;
+border-radius:15px;
+font-weight:700;
+}
+
+/* POPUP PDF */
+
+.modal{
+display:none;
+
+position:fixed;
+z-index:9999;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,.85);
+}
+
+.modal-content{
+
+position:absolute;
+
+top:5%;
+left:5%;
+
+width:90%;
+height:90%;
+
+background:white;
+
+border-radius:20px;
+overflow:hidden;
+}
+
+.modal-content iframe{
+width:100%;
+height:100%;
+border:none;
+}
+
+.close{
+position:absolute;
+top:15px;
+right:25px;
+
+font-size:45px;
+font-weight:bold;
+
+color:white;
+cursor:pointer;
+
+z-index:10000;
+}
+
+@media(max-width:600px){
+
+.header h1{
+font-size:1.7rem;
+}
+
+.card h2{
+font-size:1rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<h1>🚧 Épreuves de Maniabilité</h1>
+</div>
+
+<div class="container">
+
+<div class="section-title">
+🚛 Poids Lourds & Remorques
+</div>
+
+<div class="card">
+<h2>Maniabilité BE</h2>
+<button class="btn"
+onclick="openPDF('https://drive.google.com/file/d/1UZsdwWyVXNuODACwj8XZU7YKD9rxpREt/preview')">
+📄 Ouvrir la piste
+</button>
+</div>
+
+<div class="card">
+<h2>Maniabilité C (8-10m)</h2>
+<button class="btn"
+onclick="openPDF('https://drive.google.com/file/d/1R7B0dhuimgIyJ9RHoRWel_iiwaFVv9QX/preview')">
+📄 Ouvrir la piste
+</button>
+</div>
+
+<div class="card">
+<h2>Maniabilité C (+10m)</h2>
+<button class="btn"
+onclick="openPDF('https://drive.google.com/file/d/1yTsXftQ_8QHo5V057HA0DQGNYb16YunQ/preview')">
+📄 Ouvrir la piste
+</button>
+</div>
+
+<div class="card">
+<h2>Maniabilité CE</h2>
+<button class="btn"
+onclick="openPDF('https://drive.google.com/file/d/1_YeWY1q4MrUkdxZ4YnGR-wOPdSDqFgVJ/preview')">
+📄 Ouvrir la piste
+</button>
+</div>
+
+<div class="card">
+<h2>Maniabilité D</h2>
+<button class="btn"
+onclick="openPDF('https://drive.google.com/file/d/1CyUar8H1HmdCOYIaTi_OTxd9GaZstpmL/preview')">
+📄 Ouvrir la piste
+</button>
+</div>
+
+<div class="section-title">
+🚌 Catégories intermédiaires
+</div>
+
+<div class="card">
+<h2>Maniabilité C1</h2>
+<button class="btn"
+onclick="openPDF('https://drive.google.com/file/d/1gZBNQPyJyea5pRNxFhZXgt6-d7VX_hct/preview')">
+📄 Ouvrir la piste
+</button>
+</div>
+
+<div class="card">
+<h2>Maniabilité C1E</h2>
+<button class="btn"
+onclick="openPDF('https://drive.google.com/file/d/1rz8znXDHgnewdHmPX-YobKRgh3S-48tF/preview')">
+📄 Ouvrir la piste
+</button>
+</div>
+
+<div class="card">
+<h2>Maniabilité D1</h2>
+<button class="btn"
+onclick="openPDF('https://drive.google.com/file/d/1YBMuJec4yy0DikWL__sKCJ8aPAte8u0U/preview')">
+📄 Ouvrir la piste
+</button>
+</div>
+
+<div class="card">
+<h2>Maniabilité D1E</h2>
+<button class="btn"
+onclick="openPDF('https://drive.google.com/file/d/14gkgsKd_YgI0wjnC4z7p2J60kH1cb-uY/preview')">
+📄 Ouvrir la piste
+</button>
+</div>
+
+<div class="card">
+<h2>Maniabilité DE</h2>
+<button class="btn"
+onclick="openPDF('https://drive.google.com/file/d/1WX93W_FnxyPBVsF1gUdcTeH1Y0ex_5oA/preview')">
+📄 Ouvrir la piste
+</button>
+</div>
+
+<div class="back">
+<a href="index.html">
+⬅ Retour à l'accueil
+</a>
+</div>
+
+</div>
+
+<div id="pdfModal" class="modal">
+
+<span class="close">&times;</span>
+
+<div class="modal-content">
+<iframe id="pdfFrame"></iframe>
+</div>
+
+</div>
+
+<script>
+
+const modal = document.getElementById("pdfModal");
+const frame = document.getElementById("pdfFrame");
+
+function openPDF(url){
+
+    frame.src = url;
+    modal.style.display = "block";
+
+}
+
+document.querySelector(".close").onclick = function(){
+
+    modal.style.display = "none";
+    frame.src = "";
+
+}
+
+window.onclick = function(event){
+
+    if(event.target === modal){
+
+        modal.style.display = "none";
+        frame.src = "";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Procédures</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<script defer data-domain="sps-pedago2.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script>
+<script src="https://tiiny.host/ad-script.js"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+}
+
+body{
+background:#f4f6f9;
+}
+
+.header{
+background:linear-gradient(135deg,#2196f3,#1565c0);
+color:white;
+padding:25px;
+text-align:center;
+box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.header h1{
+font-size:2rem;
+font-weight:800;
+}
+
+.container{
+max-width:800px;
+margin:auto;
+padding:20px 15px 40px;
+}
+
+.section-title{
+margin:25px 0 15px;
+color:#334155;
+font-size:1.2rem;
+font-weight:800;
+}
+
+.card{
+background:white;
+border-radius:22px;
+padding:20px;
+margin-bottom:15px;
+box-shadow:0 6px 20px rgba(0,0,0,.08);
+}
+
+.card h2{
+font-size:1.3rem;
+margin-bottom:15px;
+color:#0f172a;
+}
+
+.actions{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.btn{
+flex:1;
+min-width:140px;
+text-decoration:none;
+color:white;
+padding:14px;
+border-radius:14px;
+font-weight:700;
+text-align:center;
+transition:.2s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+}
+
+.qr{
+background:linear-gradient(135deg,#43a047,#2e7d32);
+}
+
+.pdf{
+background:linear-gradient(135deg,#2196f3,#1565c0);
+}
+
+.back{
+display:flex;
+justify-content:center;
+margin-top:35px;
+}
+
+.back a{
+background:#334155;
+color:white;
+text-decoration:none;
+padding:15px 25px;
+border-radius:15px;
+font-weight:700;
+}
+
+/* POPUP QR CODE */
+
+.modal{
+display:none;
+position:fixed;
+z-index:9999;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.85);
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.modal-content{
+max-width:90%;
+max-height:90%;
+background:white;
+padding:10px;
+border-radius:20px;
+}
+
+.close{
+position:absolute;
+top:20px;
+right:30px;
+font-size:45px;
+font-weight:bold;
+color:white;
+cursor:pointer;
+}
+
+@media(max-width:600px){
+
+.header h1{
+font-size:1.7rem;
+}
+
+.card h2{
+font-size:1.1rem;
+}
+
+.btn{
+width:100%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<h1>📋 Procédures</h1>
+</div>
+
+<div class="container">
+
+<div class="section-title">
+🚛 Procédures
+</div>
+
+<div class="card">
+<h2>Procédure C</h2>
+<div class="actions">
+<a href="#" onclick="openQR('procedure_c.png')" class="btn qr">
+📱 QR Code Stagiaires
+</a>
+<a href="https://drive.google.com/file/d/1vXGq0TVGYOxlgBUBsaw3bDvtEU-kPlal/view?usp=drive_link"
+class="btn pdf" target="_blank">
+📄 PDF Formateur
+</a>
+</div>
+</div>
+
+<div class="card">
+<h2>Procédure CE</h2>
+<div class="actions">
+<a href="#" onclick="openQR('procedure_ce.png')" class="btn qr">
+📱 QR Code Stagiaires
+</a>
+<a href="https://drive.google.com/file/d/1LYbt4Kv3pe0O_k7Rc8wx1brVoX-ikk6k/view?usp=drive_link"
+class="btn pdf" target="_blank">
+📄 PDF Formateur
+</a>
+</div>
+</div>
+
+<div class="card">
+<h2>Procédure D</h2>
+<div class="actions">
+<a href="#" onclick="openQR('procedure_d.png')" class="btn qr">
+📱 QR Code Stagiaires
+</a>
+<a href="https://drive.google.com/file/d/174TZuR9VGKq-INI6zRfX-R9brcl6Qn0X/view?usp=drive_link"
+class="btn pdf" target="_blank">
+📄 PDF Formateur
+</a>
+</div>
+</div>
+
+<div class="card">
+<h2>Procédure BE</h2>
+<div class="actions">
+<a href="#" onclick="openQR('procedure_be.png')" class="btn qr">
+📱 QR Code Stagiaires
+</a>
+<a href="https://drive.google.com/file/d/146XKt7sVsjAYHKDckmyT7bqmb7QdI2Sd/view?usp=drive_link"
+class="btn pdf" target="_blank">
+📄 PDF Formateur
+</a>
+</div>
+</div>
+
+<div class="section-title">
+💡 Thèmes spécifiques
+</div>
+
+<div class="card">
+<h2>Thème 2 - Voyants MAN TGX (2020)</h2>
+<div class="actions">
+<a href="#" onclick="openQR('voyants_tgx.png')" class="btn qr">
+📱 QR Code Stagiaires
+</a>
+<a href="https://drive.google.com/file/d/1yJu1g_S5YyKMkp65rJK4Qv2jT4Ydl5jB/view?usp=drive_link"
+class="btn pdf" target="_blank">
+📄 PDF Formateur
+</a>
+</div>
+</div>
+
+<div class="section-title">
+📚 Outils
+</div>
+
+<div class="card">
+<h2>Guide d'évaluation</h2>
+<div class="actions">
+<a href="https://drive.google.com/file/d/1PAluqcxTGH2TLLA4uCb8MnBFlnB6r769/view?usp=drive_link"
+class="btn pdf" target="_blank">
+📄 PDF Formateur
+</a>
+</div>
+</div>
+
+<div class="card">
+<h2>Diaporama FAD C/CE/D</h2>
+<div class="actions">
+<a href="https://drive.google.com/file/d/10siPhYEe_5aadm_H5YiZxgScGLK6OYuk/view?usp=drive_link"
+class="btn pdf" target="_blank">
+📄 PDF Formateur
+</a>
+</div>
+</div>
+
+<div class="card">
+<h2>Diaporama FAD BE</h2>
+<div class="actions">
+<a href="https://drive.google.com/file/d/1IkJVxyefKf2LtsYo86OsKnqekf2R6GYU/view?usp=drive_link"
+class="btn pdf" target="_blank">
+📄 PDF Formateur
+</a>
+</div>
+</div>
+
+<div class="back">
+<a href="index.html">
+⬅ Retour à l'accueil
+</a>
+</div>
+
+</div>
+
+<!-- POPUP QR -->
+
+<div id="qrModal" class="modal">
+
+<span class="close">&times;</span>
+
+<img class="modal-content" id="qrImage">
+
+</div>
+
+<script>
+
+const modal = document.getElementById("qrModal");
+const modalImg = document.getElementById("qrImage");
+
+function openQR(image){
+    modal.style.display = "flex";
+    modalImg.src = image;
+}
+
+document.querySelector(".close").onclick = function(){
+    modal.style.display = "none";
+}
+
+modal.onclick = function(event){
+    if(event.target === modal){
+        modal.style.display = "none";
+    }
+}
+
+</script>
+
+</body>
+</html>

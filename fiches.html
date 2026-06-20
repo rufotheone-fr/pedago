@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Fiches Écrites / Orales</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<script defer data-domain="sps-pedago2.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script>
+<script src="https://tiiny.host/ad-script.js"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+}
+
+body{
+background:#f4f6f9;
+}
+
+.header{
+background:linear-gradient(135deg,#4caf50,#2e7d32);
+color:white;
+padding:25px;
+text-align:center;
+box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.header h1{
+font-size:2rem;
+font-weight:800;
+}
+
+.container{
+max-width:800px;
+margin:auto;
+padding:20px 15px 40px;
+}
+
+.section-title{
+margin:25px 0 15px;
+font-size:1.25rem;
+font-weight:800;
+color:#334155;
+}
+
+.card{
+background:white;
+border-radius:22px;
+padding:20px;
+margin-bottom:15px;
+box-shadow:0 6px 20px rgba(0,0,0,.08);
+}
+
+.card h2{
+font-size:1.2rem;
+margin-bottom:15px;
+color:#0f172a;
+}
+
+.actions{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.btn{
+flex:1;
+min-width:150px;
+
+text-decoration:none;
+color:white;
+
+padding:14px;
+
+border-radius:14px;
+
+font-weight:700;
+text-align:center;
+
+transition:.2s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+}
+
+.qr{
+background:linear-gradient(135deg,#43a047,#2e7d32);
+}
+
+.pdf{
+background:linear-gradient(135deg,#2196f3,#1565c0);
+}
+
+.youtube{
+background:linear-gradient(135deg,#ff3d3d,#c62828);
+}
+
+.back{
+display:flex;
+justify-content:center;
+margin-top:35px;
+}
+
+.back a{
+background:#334155;
+color:white;
+text-decoration:none;
+padding:15px 25px;
+border-radius:15px;
+font-weight:700;
+}
+
+/* Popup QR */
+
+.modal{
+display:none;
+position:fixed;
+z-index:9999;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.85);
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.modal-content{
+max-width:90%;
+max-height:90%;
+background:white;
+padding:10px;
+border-radius:20px;
+}
+
+.close{
+position:absolute;
+top:20px;
+right:30px;
+font-size:45px;
+font-weight:bold;
+color:white;
+cursor:pointer;
+}
+
+@media(max-width:600px){
+
+.header h1{
+font-size:1.7rem;
+}
+
+.card h2{
+font-size:1.05rem;
+}
+
+.btn{
+width:100%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<h1>📚 Fiches Écrites & Orales</h1>
+</div>
+
+<div class="container">
+
+<div class="section-title">
+📝 Fiches Écrites
+</div>
+
+<div class="card">
+<h2>Fiches écrites C</h2>
+<div class="actions">
+<a href="#" onclick="openQR('fiches_ecrites_c.png')" class="btn qr">📱 QR Code Stagiaires</a>
+<a href="https://drive.google.com/file/d/1yGIZV3FsL8LQtckLnQro7Ms4T6OWBAQV/view?usp=drive_link" class="btn pdf" target="_blank">📄 Document Formateur</a>
+</div>
+</div>
+
+<div class="card">
+<h2>Fiches écrites C - Corrections</h2>
+<div class="actions">
+<a href="#" onclick="openQR('fiches_ecrites_c_corrections.png')" class="btn qr">📱 QR Code Stagiaires</a>
+<a href="https://drive.google.com/file/d/180p1y8i_SypYbzUiUk5baWoNX0smhXhX/view?usp=drive_link" class="btn pdf" target="_blank">📄 Document Formateur</a>
+</div>
+</div>
+
+<div class="card">
+<h2>Fiches écrites CE</h2>
+<div class="actions">
+<a href="#" onclick="openQR('fiches_ecrites_ce.png')" class="btn qr">📱 QR Code Stagiaires</a>
+<a href="https://drive.google.com/file/d/1CtlL39V7clZHfw4njAG8C_kyCYK9zHUW/view?usp=drive_link" class="btn pdf" target="_blank">📄 Document Formateur</a>
+</div>
+</div>
+
+<div class="card">
+<h2>Fiches écrites CE - Corrections</h2>
+<div class="actions">
+<a href="#" onclick="openQR('fiches_ecrites_ce_corrections.png')" class="btn qr">📱 QR Code Stagiaires</a>
+<a href="https://drive.google.com/file/d/1y5pI7wdkJVcUba5N_meBGHTdOnLEHt0L/view?usp=drive_link" class="btn pdf" target="_blank">📄 Document Formateur</a>
+</div>
+</div>
+
+<div class="card">
+<h2>Fiches écrites D</h2>
+<div class="actions">
+<a href="#" onclick="openQR('fiches_ecrites_d.png')" class="btn qr">📱 QR Code Stagiaires</a>
+<a href="https://drive.google.com/file/d/1EqV8d1qdl1C3AnuBuknuSKFAqBO6Poqv/view?usp=drive_link" class="btn pdf" target="_blank">📄 Document Formateur</a>
+</div>
+</div>
+
+<div class="card">
+<h2>Fiches écrites D - Corrections</h2>
+<div class="actions">
+<a href="#" onclick="openQR('fiches_ecrites_d_corrections.png')" class="btn qr">📱 QR Code Stagiaires</a>
+<a href="https://drive.google.com/file/d/1ilyo_cWsJGGkVyB2RjzVtYr73pJPsqFJ/view?usp=drive_link" class="btn pdf" target="_blank">📄 Document Formateur</a>
+</div>
+</div>
+
+<div class="section-title">
+🎤 Fiches Orales
+</div>
+
+<div class="card">
+<h2>Fiches Orales Permis C</h2>
+<div class="actions">
+<a href="#" onclick="openQR('fiches_orales_c_youtube.png')" class="btn qr">📱 QR Code Playlist</a>
+<a href="https://youtube.com/playlist?list=PLXiI5WuwoihuW33LCSjtukZHj2DokVZpi&si=rWsXQ9gmIn3nh3HY" class="btn youtube" target="_blank">▶ Playlist YouTube</a>
+</div>
+</div>
+
+<div class="card">
+<h2>Fiches Orales Permis D</h2>
+<div class="actions">
+<a href="#" onclick="openQR('fiches_orales_d_youtube.png')" class="btn qr">📱 QR Code Playlist</a>
+<a href="https://www.youtube.com/watch?v=fSytVMpDL-Q&list=PLXiI5WuwoihsEVCqA6hmr4rA59eLDSAxg" class="btn youtube" target="_blank">▶ Playlist YouTube</a>
+</div>
+</div>
+
+<div class="card">
+<h2>Plaquettes & Éléments de réponse</h2>
+<div class="actions">
+<a href="#" onclick="openQR('fiches_orales_01-12.png')" class="btn qr">📱 QR Code Stagiaires</a>
+<a href="https://drive.google.com/file/d/1oyCGrJmmKf_hsaTLTqw_x04ag98HUaoR/view?usp=drive_link" class="btn pdf" target="_blank">📄 Document Formateur</a>
+</div>
+</div>
+
+<div class="back">
+<a href="index.html">⬅ Retour à l'accueil</a>
+</div>
+
+</div>
+
+<div id="qrModal" class="modal">
+<span class="close">&times;</span>
+<img class="modal-content" id="qrImage">
+</div>
+
+<script>
+
+const modal = document.getElementById("qrModal");
+const modalImg = document.getElementById("qrImage");
+
+function openQR(image){
+    modal.style.display = "flex";
+    modalImg.src = image;
+}
+
+document.querySelector(".close").onclick = function(){
+    modal.style.display = "none";
+}
+
+modal.onclick = function(event){
+    if(event.target === modal){
+        modal.style.display = "none";
+    }
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Outils pédagogiques</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+:root{
+--blue:#1976d2;
+--green:#2e7d32;
+--orange:#f57c00;
+--red:#d32f2f;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+}
+
+body{
+background:#f4f6f9;
+}
+
+/* HEADER */
+
+.header{
+background:linear-gradient(135deg,#2196f3,#1565c0);
+color:white;
+padding:22px;
+box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.header h1{
+font-size:1.7rem;
+font-weight:700;
+text-align:center;
+}
+
+/* CONTENU */
+
+.container{
+padding:20px 15px 40px;
+max-width:700px;
+margin:auto;
+}
+
+.intro{
+text-align:center;
+margin:15px 0 25px;
+color:#607d8b;
+font-size:1.1rem;
+font-weight:600;
+}
+
+/* CARTES */
+
+.card{
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+text-decoration:none;
+color:white;
+
+padding:25px;
+
+margin-bottom:18px;
+
+border-radius:28px;
+
+min-height:130px;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.15);
+
+transition:.25s ease;
+position:relative;
+overflow:hidden;
+}
+
+.card:hover{
+transform:translateY(-4px);
+}
+
+.card::before{
+content:'';
+position:absolute;
+right:-50px;
+top:0;
+width:180px;
+height:100%;
+background:rgba(255,255,255,.08);
+transform:skewX(-25deg);
+}
+
+.left{
+display:flex;
+align-items:center;
+gap:22px;
+z-index:2;
+}
+
+.icon{
+
+width:85px;
+height:85px;
+
+background:white;
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:2.3rem;
+}
+
+.blue .icon{color:var(--blue);}
+.green .icon{color:var(--green);}
+.orange .icon{color:var(--orange);}
+.red .icon{color:var(--red);}
+
+.text h2{
+font-size:2rem;
+font-weight:800;
+line-height:1.1;
+}
+
+.text p{
+font-size:1rem;
+margin-top:8px;
+opacity:.95;
+}
+
+.arrow{
+font-size:3rem;
+font-weight:300;
+z-index:2;
+}
+
+.blue{
+background:linear-gradient(135deg,#2196f3,#1565c0);
+}
+
+.green{
+background:linear-gradient(135deg,#4caf50,#2e7d32);
+}
+
+.orange{
+background:linear-gradient(135deg,#ffb300,#f57c00);
+}
+
+.red{
+background:linear-gradient(135deg,#f44336,#c62828);
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+.header h1{
+font-size:1.5rem;
+}
+
+.card{
+padding:20px;
+min-height:115px;
+}
+
+.icon{
+width:70px;
+height:70px;
+font-size:1.9rem;
+}
+
+.text h2{
+font-size:1.55rem;
+}
+
+.text p{
+font-size:.9rem;
+}
+
+.arrow{
+font-size:2.2rem;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header class="header">
+<h1>🎓 Outils pédagogiques</h1>
+</header>
+
+<div class="container">
+
+<div class="intro">
+Choisissez un outil
+</div>
+
+<a href="procedures.html" class="card blue">
+
+<div class="left">
+
+<div class="icon">
+<i class="fa-solid fa-clipboard-check"></i>
+</div>
+
+<div class="text">
+<h2>Procédures & QR Codes</h2>
+<p>BE / C / CE / D</p>
+</div>
+
+</div>
+
+<div class="arrow">›</div>
+
+</a>
+
+<a href="fiches.html" class="card green">
+
+<div class="left">
+
+<div class="icon">
+<i class="fa-solid fa-book-open"></i>
+</div>
+
+<div class="text">
+<h2>Fiches écrites et orales</h2>
+<p>C / CE / D</p>
+</div>
+
+</div>
+
+<div class="arrow">›</div>
+
+</a>
+
+<a href="examens_blancs.html" class="card orange">
+
+<div class="left">
+
+<div class="icon">
+<i class="fa-solid fa-bullseye"></i>
+</div>
+
+<div class="text">
+<h2>Examens blancs</h2>
+<p>BE / C / CE / D</p>
+</div>
+
+</div>
+
+<div class="arrow">›</div>
+
+</a>
+
+<a href="pistes.html" class="card red">
+
+<div class="left">
+
+<div class="icon">
+<i class="fa-solid fa-truck"></i>
+</div>
+
+<div class="text">
+<h2>Parcours</h2>
+<p>BE / C / CE / D</p>
+</div>
+
+</div>
+
+<div class="arrow">›</div>
+
+</a>
+
+</div>
+
+</body>
+</html>
