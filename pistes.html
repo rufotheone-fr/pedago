@@ -10,9 +10,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-<script defer data-domain="sps-pedago2.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script>
-<script src="https://tiiny.host/ad-script.js"></script>
-
 <style>
 
 *{
@@ -124,11 +121,11 @@ background:rgba(0,0,0,.85);
 
 position:absolute;
 
-top:5%;
-left:5%;
+top:2%;
+left:2%;
 
-width:90%;
-height:90%;
+width:96%;
+height:96%;
 
 background:white;
 
@@ -223,6 +220,14 @@ onclick="openPDF('https://drive.google.com/file/d/1CyUar8H1HmdCOYIaTi_OTxd9GaZst
 </button>
 </div>
 
+<div class="card">
+<h2>Maniabilité DE</h2>
+<button class="btn"
+onclick="openPDF('https://drive.google.com/file/d/1WX93W_FnxyPBVsF1gUdcTeH1Y0ex_5oA/preview')">
+📄 Ouvrir la piste
+</button>
+</div>
+
 <div class="section-title">
 🚌 Catégories intermédiaires
 </div>
@@ -259,14 +264,6 @@ onclick="openPDF('https://drive.google.com/file/d/14gkgsKd_YgI0wjnC4z7p2J60kH1cb
 </button>
 </div>
 
-<div class="card">
-<h2>Maniabilité DE</h2>
-<button class="btn"
-onclick="openPDF('https://drive.google.com/file/d/1WX93W_FnxyPBVsF1gUdcTeH1Y0ex_5oA/preview')">
-📄 Ouvrir la piste
-</button>
-</div>
-
 <div class="back">
 <a href="index.html">
 ⬅ Retour à l'accueil
@@ -293,14 +290,20 @@ const frame = document.getElementById("pdfFrame");
 function openPDF(url){
 
     frame.src = url;
+
     modal.style.display = "block";
+
+    document.body.style.overflow = "hidden";
 
 }
 
 document.querySelector(".close").onclick = function(){
 
     modal.style.display = "none";
+
     frame.src = "";
+
+    document.body.style.overflow = "auto";
 
 }
 
@@ -309,7 +312,10 @@ window.onclick = function(event){
     if(event.target === modal){
 
         modal.style.display = "none";
+
         frame.src = "";
+
+        document.body.style.overflow = "auto";
 
     }
 

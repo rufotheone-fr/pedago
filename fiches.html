@@ -10,9 +10,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-<script defer data-domain="sps-pedago2.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script>
-<script src="https://tiiny.host/ad-script.js"></script>
-
 <style>
 
 *{
@@ -144,6 +141,14 @@ padding:10px;
 border-radius:20px;
 }
 
+.modal-frame{
+width:95vw;
+height:90vh;
+border:none;
+background:white;
+border-radius:20px;
+}
+
 .close{
 position:absolute;
 top:20px;
@@ -189,7 +194,9 @@ width:100%;
 <h2>Fiches écrites C</h2>
 <div class="actions">
 <a href="#" onclick="openQR('fiches_ecrites_c.png')" class="btn qr">📱 QR Code Stagiaires</a>
-<a href="https://drive.google.com/file/d/1yGIZV3FsL8LQtckLnQro7Ms4T6OWBAQV/view?usp=drive_link" class="btn pdf" target="_blank">📄 Document Formateur</a>
+<a href="#" class="btn pdf" onclick="openPDF('https://drive.google.com/file/d/1yGIZV3FsL8LQtckLnQro7Ms4T6OWBAQV/preview')">
+📄 PDF Formateur
+</a>
 </div>
 </div>
 
@@ -197,7 +204,9 @@ width:100%;
 <h2>Fiches écrites C - Corrections</h2>
 <div class="actions">
 <a href="#" onclick="openQR('fiches_ecrites_c_corrections.png')" class="btn qr">📱 QR Code Stagiaires</a>
-<a href="https://drive.google.com/file/d/180p1y8i_SypYbzUiUk5baWoNX0smhXhX/view?usp=drive_link" class="btn pdf" target="_blank">📄 Document Formateur</a>
+<a href="#" class="btn pdf" onclick="openPDF('https://drive.google.com/file/d/180p1y8i_SypYbzUiUk5baWoNX0smhXhX/preview')">
+📄 PDF Formateur
+</a>
 </div>
 </div>
 
@@ -205,7 +214,9 @@ width:100%;
 <h2>Fiches écrites CE</h2>
 <div class="actions">
 <a href="#" onclick="openQR('fiches_ecrites_ce.png')" class="btn qr">📱 QR Code Stagiaires</a>
-<a href="https://drive.google.com/file/d/1CtlL39V7clZHfw4njAG8C_kyCYK9zHUW/view?usp=drive_link" class="btn pdf" target="_blank">📄 Document Formateur</a>
+<a href="#" class="btn pdf" onclick="openPDF('https://drive.google.com/file/d/1CtlL39V7clZHfw4njAG8C_kyCYK9zHUW/preview')">
+📄 PDF Formateur
+</a>
 </div>
 </div>
 
@@ -213,7 +224,9 @@ width:100%;
 <h2>Fiches écrites CE - Corrections</h2>
 <div class="actions">
 <a href="#" onclick="openQR('fiches_ecrites_ce_corrections.png')" class="btn qr">📱 QR Code Stagiaires</a>
-<a href="https://drive.google.com/file/d/1y5pI7wdkJVcUba5N_meBGHTdOnLEHt0L/view?usp=drive_link" class="btn pdf" target="_blank">📄 Document Formateur</a>
+<a href="#" class="btn pdf" onclick="openPDF('https://drive.google.com/file/d/1y5pI7wdkJVcUba5N_meBGHTdOnLEHt0L/preview')">
+📄 PDF Formateur
+</a>
 </div>
 </div>
 
@@ -221,7 +234,9 @@ width:100%;
 <h2>Fiches écrites D</h2>
 <div class="actions">
 <a href="#" onclick="openQR('fiches_ecrites_d.png')" class="btn qr">📱 QR Code Stagiaires</a>
-<a href="https://drive.google.com/file/d/1EqV8d1qdl1C3AnuBuknuSKFAqBO6Poqv/view?usp=drive_link" class="btn pdf" target="_blank">📄 Document Formateur</a>
+<a href="#" class="btn pdf" onclick="openPDF('https://drive.google.com/file/d/1EqV8d1qdl1C3AnuBuknuSKFAqBO6Poqv/preview')">
+📄 PDF Formateur
+</a>
 </div>
 </div>
 
@@ -229,7 +244,9 @@ width:100%;
 <h2>Fiches écrites D - Corrections</h2>
 <div class="actions">
 <a href="#" onclick="openQR('fiches_ecrites_d_corrections.png')" class="btn qr">📱 QR Code Stagiaires</a>
-<a href="https://drive.google.com/file/d/1ilyo_cWsJGGkVyB2RjzVtYr73pJPsqFJ/view?usp=drive_link" class="btn pdf" target="_blank">📄 Document Formateur</a>
+<a href="#" class="btn pdf" onclick="openPDF('https://drive.google.com/file/d/1ilyo_cWsJGGkVyB2RjzVtYr73pJPsqFJ/preview')">
+📄 PDF Formateur
+</a>
 </div>
 </div>
 
@@ -241,7 +258,7 @@ width:100%;
 <h2>Fiches Orales Permis C</h2>
 <div class="actions">
 <a href="#" onclick="openQR('fiches_orales_c_youtube.png')" class="btn qr">📱 QR Code Playlist</a>
-<a href="https://youtube.com/playlist?list=PLXiI5WuwoihuW33LCSjtukZHj2DokVZpi&si=rWsXQ9gmIn3nh3HY" class="btn youtube" target="_blank">▶ Playlist YouTube</a>
+<a href="https://www.youtube.com/watch?v=6MhumXefQtY&list=PLXiI5WuwoihuW33LCSjtukZHj2DokVZpi" class="btn youtube" target="_blank">▶ Playlist YouTube</a>
 </div>
 </div>
 
@@ -257,7 +274,9 @@ width:100%;
 <h2>Plaquettes & Éléments de réponse</h2>
 <div class="actions">
 <a href="#" onclick="openQR('fiches_orales_01-12.png')" class="btn qr">📱 QR Code Stagiaires</a>
-<a href="https://drive.google.com/file/d/1oyCGrJmmKf_hsaTLTqw_x04ag98HUaoR/view?usp=drive_link" class="btn pdf" target="_blank">📄 Document Formateur</a>
+<a href="#" class="btn pdf" onclick="openPDF('https://drive.google.com/file/d/1oyCGrJmmKf_hsaTLTqw_x04ag98HUaoR/preview')">
+📄 PDF Formateur
+</a>
 </div>
 </div>
 
@@ -267,28 +286,62 @@ width:100%;
 
 </div>
 
-<div id="qrModal" class="modal">
+<div id="viewerModal" class="modal">
+
 <span class="close">&times;</span>
-<img class="modal-content" id="qrImage">
+
+<img id="viewerImage"
+     class="modal-content"
+     style="display:none">
+
+<iframe id="viewerFrame"
+        class="modal-frame"
+        style="display:none">
+</iframe>
+
 </div>
 
 <script>
 
-const modal = document.getElementById("qrModal");
-const modalImg = document.getElementById("qrImage");
+const modal = document.getElementById("viewerModal");
 
-function openQR(image){
+const image = document.getElementById("viewerImage");
+const frame = document.getElementById("viewerFrame");
+
+function openQR(src){
+
+    image.style.display = "block";
+    frame.style.display = "none";
+
+    image.src = src;
+
     modal.style.display = "flex";
-    modalImg.src = image;
+}
+
+function openPDF(url){
+
+    image.style.display = "none";
+    frame.style.display = "block";
+
+    frame.src = url;
+
+    modal.style.display = "flex";
 }
 
 document.querySelector(".close").onclick = function(){
+
     modal.style.display = "none";
+
+    frame.src = "";
 }
 
 modal.onclick = function(event){
+
     if(event.target === modal){
+
         modal.style.display = "none";
+
+        frame.src = "";
     }
 }
 

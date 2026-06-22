@@ -10,9 +10,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-<script defer data-domain="sps-pedago2.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script>
-<script src="https://tiiny.host/ad-script.js"></script>
-
 <style>
 
 *{
@@ -135,6 +132,14 @@ padding:10px;
 border-radius:20px;
 }
 
+.modal-frame{
+width:95vw;
+height:90vh;
+border:none;
+background:white;
+border-radius:20px;
+}
+
 .close{
 position:absolute;
 top:20px;
@@ -182,8 +187,7 @@ width:100%;
 <a href="#" onclick="openQR('procedure_c.png')" class="btn qr">
 📱 QR Code Stagiaires
 </a>
-<a href="https://drive.google.com/file/d/1vXGq0TVGYOxlgBUBsaw3bDvtEU-kPlal/view?usp=drive_link"
-class="btn pdf" target="_blank">
+<a href="#" class="btn pdf" onclick="openPDF('https://drive.google.com/file/d/1vXGq0TVGYOxlgBUBsaw3bDvtEU-kPlal/preview')">
 📄 PDF Formateur
 </a>
 </div>
@@ -195,8 +199,7 @@ class="btn pdf" target="_blank">
 <a href="#" onclick="openQR('procedure_ce.png')" class="btn qr">
 📱 QR Code Stagiaires
 </a>
-<a href="https://drive.google.com/file/d/1LYbt4Kv3pe0O_k7Rc8wx1brVoX-ikk6k/view?usp=drive_link"
-class="btn pdf" target="_blank">
+<a href="#" class="btn pdf" onclick="openPDF('https://drive.google.com/file/d/1LYbt4Kv3pe0O_k7Rc8wx1brVoX-ikk6k/preview')">
 📄 PDF Formateur
 </a>
 </div>
@@ -208,8 +211,7 @@ class="btn pdf" target="_blank">
 <a href="#" onclick="openQR('procedure_d.png')" class="btn qr">
 📱 QR Code Stagiaires
 </a>
-<a href="https://drive.google.com/file/d/174TZuR9VGKq-INI6zRfX-R9brcl6Qn0X/view?usp=drive_link"
-class="btn pdf" target="_blank">
+<a href="#" class="btn pdf" onclick="openPDF('https://drive.google.com/file/d/174TZuR9VGKq-INI6zRfX-R9brcl6Qn0X/preview')">
 📄 PDF Formateur
 </a>
 </div>
@@ -221,8 +223,7 @@ class="btn pdf" target="_blank">
 <a href="#" onclick="openQR('procedure_be.png')" class="btn qr">
 📱 QR Code Stagiaires
 </a>
-<a href="https://drive.google.com/file/d/146XKt7sVsjAYHKDckmyT7bqmb7QdI2Sd/view?usp=drive_link"
-class="btn pdf" target="_blank">
+<a href="#" class="btn pdf" onclick="openPDF('https://drive.google.com/file/d/146XKt7sVsjAYHKDckmyT7bqmb7QdI2Sd/preview')">
 📄 PDF Formateur
 </a>
 </div>
@@ -238,8 +239,7 @@ class="btn pdf" target="_blank">
 <a href="#" onclick="openQR('voyants_tgx.png')" class="btn qr">
 📱 QR Code Stagiaires
 </a>
-<a href="https://drive.google.com/file/d/1yJu1g_S5YyKMkp65rJK4Qv2jT4Ydl5jB/view?usp=drive_link"
-class="btn pdf" target="_blank">
+<a href="#" class="btn pdf" onclick="openPDF('https://drive.google.com/file/d/1yJu1g_S5YyKMkp65rJK4Qv2jT4Ydl5jB/preview')">
 📄 PDF Formateur
 </a>
 </div>
@@ -252,8 +252,7 @@ class="btn pdf" target="_blank">
 <div class="card">
 <h2>Guide d'évaluation</h2>
 <div class="actions">
-<a href="https://drive.google.com/file/d/1PAluqcxTGH2TLLA4uCb8MnBFlnB6r769/view?usp=drive_link"
-class="btn pdf" target="_blank">
+<a href="#" class="btn pdf" onclick="openPDF('https://drive.google.com/file/d/1PAluqcxTGH2TLLA4uCb8MnBFlnB6r769/preview')">
 📄 PDF Formateur
 </a>
 </div>
@@ -262,8 +261,7 @@ class="btn pdf" target="_blank">
 <div class="card">
 <h2>Diaporama FAD C/CE/D</h2>
 <div class="actions">
-<a href="https://drive.google.com/file/d/10siPhYEe_5aadm_H5YiZxgScGLK6OYuk/view?usp=drive_link"
-class="btn pdf" target="_blank">
+<a href="#" class="btn pdf" onclick="openPDF('https://drive.google.com/file/d/10siPhYEe_5aadm_H5YiZxgScGLK6OYuk/preview')">
 📄 PDF Formateur
 </a>
 </div>
@@ -272,8 +270,7 @@ class="btn pdf" target="_blank">
 <div class="card">
 <h2>Diaporama FAD BE</h2>
 <div class="actions">
-<a href="https://drive.google.com/file/d/1IkJVxyefKf2LtsYo86OsKnqekf2R6GYU/view?usp=drive_link"
-class="btn pdf" target="_blank">
+<a href="#" class="btn pdf" onclick="openPDF('https://drive.google.com/file/d/1IkJVxyefKf2LtsYo86OsKnqekf2R6GYU/preview')">
 📄 PDF Formateur
 </a>
 </div>
@@ -287,33 +284,64 @@ class="btn pdf" target="_blank">
 
 </div>
 
-<!-- POPUP QR -->
+<!-- POPUP UNIVERSEL -->
 
-<div id="qrModal" class="modal">
+<div id="viewerModal" class="modal">
 
 <span class="close">&times;</span>
 
-<img class="modal-content" id="qrImage">
+<img id="viewerImage"
+     class="modal-content"
+     style="display:none">
+
+<iframe id="viewerFrame"
+        class="modal-frame"
+        style="display:none">
+</iframe>
 
 </div>
 
 <script>
 
-const modal = document.getElementById("qrModal");
-const modalImg = document.getElementById("qrImage");
+const modal = document.getElementById("viewerModal");
 
-function openQR(image){
+const image = document.getElementById("viewerImage");
+const frame = document.getElementById("viewerFrame");
+
+function openQR(src){
+
+    image.style.display = "block";
+    frame.style.display = "none";
+
+    image.src = src;
+
     modal.style.display = "flex";
-    modalImg.src = image;
+}
+
+function openPDF(url){
+
+    image.style.display = "none";
+    frame.style.display = "block";
+
+    frame.src = url;
+
+    modal.style.display = "flex";
 }
 
 document.querySelector(".close").onclick = function(){
+
     modal.style.display = "none";
+
+    frame.src = "";
 }
 
 modal.onclick = function(event){
+
     if(event.target === modal){
+
         modal.style.display = "none";
+
+        frame.src = "";
     }
 }
 
