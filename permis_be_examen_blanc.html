@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Examen Blanc Hors Circulation – Permis BE</title>
-
-<style>
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Examen Blanc Hors Circulation – Permis BE</title><style>
 
 body{
 font-family:Arial;
@@ -45,35 +36,35 @@ margin-top:10px;
 }
 
 .headerBar{
-    display:flex;
-    align-items:center;
-    background:#1565c0;
-    color:white;
-    padding:10px;
-    position:sticky;
-    top:0;
-    z-index:1000;
+display:flex;
+align-items:center;
+background:#1565c0;
+color:white;
+padding:10px;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .title{
-    flex:1;
-    text-align:center;
-    font-size:20px;
-    font-weight:bold;
+flex:1;
+text-align:center;
+font-size:20px;
+font-weight:bold;
 }
 
 .homeBtn{
-    width:40px;
-    height:40px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+width:40px;
+height:40px;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
 .homeBtn img{
-    width:28px;
-    height:28px;
-    object-fit:contain;
+width:28px;
+height:28px;
+object-fit:contain;
 }
 
 .chrono{
@@ -187,227 +178,112 @@ color:white;
 margin-top:10px;
 }
 
-</style>
-
-</head>
-
-<body>
-
-<header class="headerBar">
-
-<a href="index.html" class="homeBtn">
+</style></head><body><header class="headerBar"><a href="index.html" class="homeBtn">
     <img src="home.png" alt="Accueil">
-</a>
-
-<div class="title">
+</a><div class="title">
     Examen Blanc Hors Circulation – Permis BE
-</div>
-
-</header>
-
-<div class="container">
-
-<div class="card">
+</div></header><div class="container"><div class="card">
 Nom<input id="nom">
 Prénom<input id="prenom">
 Email<input id="email">
-</div>
-
-<div class="card">
+</div><div class="card">
 <h3>1-2-3 Immobilisation / Installation / Documents</h3>
 <div class="buttons" data-field="bloc123">
 <button class="btn">0</button>
 <button class="btn">1</button>
 </div>
-</div>
+</div><div class="card">
+<h3>4 - Contrôles tracteur</h3>Carrosserie / vitrage
 
-<div class="card">
-<h3>4 - Contrôles tracteur</h3>
-
-Carrosserie / vitrage
 <div class="buttons" data-field="carrosserie">
 <button class="btn">0</button><button class="btn">1</button>
-</div>
+</div>Roues
 
-Roues
 <div class="buttons" data-field="roues">
 <button class="btn">0</button><button class="btn">1</button>
-</div>
+</div>Taches
 
-Taches
 <div class="buttons" data-field="taches">
 <button class="btn">0</button><button class="btn">1</button>
-</div>
+</div></div><div class="card">
+<h3>5 - Contrôles remorque</h3>Caisse
 
-</div>
-
-<div class="card">
-<h3>5 - Contrôles remorque</h3>
-
-Caisse
 <div class="buttons" data-field="caisse">
 <button class="btn">0</button><button class="btn">1</button>
-</div>
+</div>Roues
 
-Roues
 <div class="buttons" data-field="rroues">
 <button class="btn">0</button><button class="btn">1</button>
-</div>
+</div>Chargement
 
-Chargement
 <div class="buttons" data-field="rchargement">
 <button class="btn">0</button><button class="btn">1</button>
-</div>
-
-</div>
-
-<div class="card">
+</div></div><div class="card">
 <h3>6 - Mise en marche moteur</h3>
 <div class="buttons" data-field="moteur">
 <button class="btn">0</button>
 <button class="btn">1</button>
 </div>
-</div>
-
-<div class="card">
-
-<h3>7 - Positionnement du véhicule tracteur</h3>
-
-<input type="range" id="positionnement" min="1" max="5" value="1" oninput="majPositionnement()">
-
-<div id="positionLabel">1 tentative</div>
-
-</div>
-
-<div class="card">
-
-<h3>8 - Compatibilité</h3>
+</div><div class="card"><h3>7 - Positionnement du véhicule tracteur</h3><input type="range" id="positionnement" min="1" max="5" value="1" oninput="majPositionnement()"><div id="positionLabel">1 tentative</div></div><div class="card"><h3>8 - Compatibilité</h3>
 <div class="buttons" data-field="compat">
 <button class="btn">0</button>
 <button class="btn">1</button>
 <button class="btn">2</button>
-</div>
-
-<h3>9 - Attelage</h3>
+</div><h3>9 - Attelage</h3>
 <div class="buttons" data-field="attelage">
 <button class="btn">0</button>
 <button class="btn">1</button>
 <button class="btn">2</button>
 <button class="btn elim">E</button>
-</div>
-
-<h3>10 - Dimensions / poids</h3>
+</div><h3>10 - Dimensions / poids</h3>
 <div class="buttons" data-field="dimensions">
 <button class="btn">0</button>
 <button class="btn">1</button>
-</div>
-
-<h3>11 - Feux</h3>
+</div><h3>11 - Feux</h3>
 <div class="buttons" data-field="feux">
 <button class="btn">0</button>
 <button class="btn">1</button>
-</div>
-
-</div>
-
-<div class="card">
-
-<h3>12 - Thème</h3>
+</div></div><div class="card"><h3>12 - Thème</h3>
 <div class="buttons" data-field="theme">
 <button class="btn">0</button>
 <button class="btn">1</button>
 <button class="btn">2</button>
 <button class="btn">3</button>
-</div>
-
-<h3>13 - Interrogation orale</h3>
+</div><h3>13 - Interrogation orale</h3>
 <div class="buttons" data-field="orale">
 <button class="btn">1</button>
 <button class="btn">2</button>
 <button class="btn">3</button>
 <button class="btn elim">E</button>
-</div>
-
-</div>
-
-<div class="card">
-
-<h3>Manœuvre 1</h3>
-
-<div class="buttons" data-field="m1">
+</div></div><div class="card"><h3>Manœuvre 1</h3><div class="buttons" data-field="m1">
 <button class="btn">Réussie</button>
 <button class="btn elim">Échec</button>
-</div>
-
-<div class="chronoBox">
-
-<div id="timer1" class="chrono">00:00</div>
-
-<button class="chronoStart" onclick="startTimer(1)">▶ Départ</button>
+</div><div class="chronoBox"><div id="timer1" class="chrono">00:00</div><button class="chronoStart" onclick="startTimer(1)">▶ Départ</button>
 <button class="chronoStop" onclick="stopTimer(1)">■ Stop</button>
 <button class="chronoReset" onclick="resetTimer(1)">↺ Reset</button>
 
-</div>
-
-
-<h3 style="margin-top:20px;">Manœuvre 2</h3>
-
-<div class="buttons" data-field="m2">
+</div><h3 style="margin-top:20px;">Manœuvre 2</h3><div class="buttons" data-field="m2">
 <button class="btn">Réussie</button>
 <button class="btn elim">Échec</button>
-</div>
-
-<div class="chronoBox">
-
-<div id="timer2" class="chrono">00:00</div>
-
-<button class="chronoStart" onclick="startTimer(2)">▶ Départ</button>
+</div><div class="chronoBox"><div id="timer2" class="chrono">00:00</div><button class="chronoStart" onclick="startTimer(2)">▶ Départ</button>
 <button class="chronoStop" onclick="stopTimer(2)">■ Stop</button>
 <button class="chronoReset" onclick="resetTimer(2)">↺ Reset</button>
 
-</div>
-
-</div>
-
-<div class="card">
-
-<h3>15 - Dételage</h3>
+</div></div><div class="card"><h3>15 - Dételage</h3>
 <div class="buttons" data-field="detelage">
 <button class="btn">0</button>
 <button class="btn">1</button>
 <button class="btn">2</button>
-</div>
-
-<h3>Gestes et postures</h3>
+</div><h3>Gestes et postures</h3>
 <div class="buttons" data-field="posture">
 <button class="btn">0</button>
 <button class="btn">1</button>
-</div>
-
-</div>
-
-<div class="card">
-
-<h3>Commentaire</h3>
-<textarea id="commentaire"></textarea>
-
-</div>
-
-<div class="card">
-
-<div id="result" class="result">Total : 0 / 23</div>
-
-<button class="send" onclick="envoyer()">Envoyer résultat</button>
+</div></div><div class="card"><h3>Commentaire</h3>
+<textarea id="commentaire"></textarea></div><div class="card"><div id="result" class="result">Total : 0 / 23</div><button class="send" onclick="envoyer()">Envoyer résultat</button>
 
 <button class="new" onclick="nouvelEleve()">Nouvel élève</button>
 
-</div>
-
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
-<script>
+</div></div><script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script><script>
 
 (function(){
 emailjs.init("GNBoUegN9wFfZgJ8M");
@@ -437,39 +313,93 @@ calculer()
 
 })
 
-let timers={1:0,2:0}
+/* ==============================
+   CHRONOMÈTRES
+   ============================== */
+
+let startTimes={1:null,2:null}
+let stopTimes={1:null,2:null}
+let running={1:false,2:false}
 let intervals={}
-let running={}
 
 function formatTime(sec){
+
+sec=Math.max(0,Math.floor(sec))
+
 let m=Math.floor(sec/60)
 let s=sec%60
+
 return String(m).padStart(2,"0")+":"+String(s).padStart(2,"0")
+
+}
+
+function formatClock(timestamp){
+
+if(!timestamp) return "-"
+
+return new Date(timestamp).toLocaleTimeString("fr-FR",{
+hour:"2-digit",
+minute:"2-digit",
+second:"2-digit"
+})
+
+}
+
+function updateTimer(id){
+
+if(!startTimes[id] || !running[id]) return
+
+let elapsed=(Date.now()-startTimes[id])/1000
+
+document.getElementById("timer"+id).innerText=formatTime(elapsed)
+
 }
 
 function startTimer(id){
 
 if(running[id]) return
 
+startTimes[id]=Date.now()
+stopTimes[id]=null
 running[id]=true
 
+notes["depart_m"+id]=formatClock(startTimes[id])
+delete notes["arret_m"+id]
+delete notes["temps_m"+id]
+
+document.getElementById("timer"+id).innerText="00:00"
+
+clearInterval(intervals[id])
+
+/*
+Le setInterval sert uniquement à actualiser
+l'affichage lorsque la page est active.
+Le temps réel est calculé avec Date.now(),
+ce qui permet de récupérer le bon temps après
+un verrouillage du téléphone.
+*/
+
 intervals[id]=setInterval(function(){
-
-timers[id]++
-
-document.getElementById("timer"+id).innerText=formatTime(timers[id])
-
-},1000)
+updateTimer(id)
+},250)
 
 }
 
 function stopTimer(id){
 
+if(!startTimes[id] || !running[id]) return
+
+stopTimes[id]=Date.now()
 running[id]=false
 
 clearInterval(intervals[id])
 
-notes["temps_m"+id]=formatTime(timers[id])
+let elapsed=(stopTimes[id]-startTimes[id])/1000
+
+notes["arret_m"+id]=formatClock(stopTimes[id])
+notes["temps_m"+id]=formatTime(elapsed)
+
+document.getElementById("timer"+id).innerText=formatTime(elapsed)
 
 beep()
 
@@ -481,11 +411,32 @@ running[id]=false
 
 clearInterval(intervals[id])
 
-timers[id]=0
+startTimes[id]=null
+stopTimes[id]=null
+
+delete notes["temps_m"+id]
+delete notes["depart_m"+id]
+delete notes["arret_m"+id]
 
 document.getElementById("timer"+id).innerText="00:00"
 
 }
+
+/*
+Quand le téléphone est déverrouillé,
+on remet immédiatement l'affichage à jour.
+*/
+
+document.addEventListener("visibilitychange",function(){
+
+if(!document.hidden){
+
+updateTimer(1)
+updateTimer(2)
+
+}
+
+})
 
 function beep(){
 
@@ -503,6 +454,10 @@ setTimeout(()=>osc.stop(),150)
 
 }
 
+/* ==============================
+   POSITIONNEMENT
+   ============================== */
+
 function majPositionnement(){
 
 let v=parseInt(document.getElementById("positionnement").value)
@@ -510,17 +465,25 @@ let v=parseInt(document.getElementById("positionnement").value)
 let label=document.getElementById("positionLabel")
 
 if(v<5){
+
 label.innerText=v+" tentative(s)"
 notes.position=v
+
 }
 else{
+
 label.innerText="5+ tentatives (éliminatoire)"
 notes.position=5
+
 }
 
 calculer()
 
 }
+
+/* ==============================
+   CALCUL
+   ============================== */
 
 function calculer(){
 
@@ -540,7 +503,10 @@ let total=0
 
 for(let key in notes){
 
-if(key==="position" || key.startsWith("temps_")) continue
+if(key==="position" ||
+key.startsWith("temps_") ||
+key.startsWith("depart_") ||
+key.startsWith("arret_")) continue
 
 let v=parseInt(notes[key])
 
@@ -552,7 +518,8 @@ let manoeuvreOK=(notes.m1==="Réussie"||notes.m2==="Réussie")
 
 let statut="INSUFFISANT"
 
-if(total>=18 && manoeuvreOK) statut="FAVORABLE"
+if(total>=18 && manoeuvreOK)
+statut="FAVORABLE"
 
 res.innerText="Total : "+total+" / 23 — "+statut
 
@@ -560,39 +527,66 @@ res.className= statut==="FAVORABLE" ? "result ok":"result bad"
 
 }
 
+/* ==============================
+   RESULTAT EMAIL
+   ============================== */
+
 function construireResultat(){
 
 let lignes=[]
 
 lignes.push("1-2. Immobilisation / Installation / Documents : "+(notes.bloc123 || "-"))
-lines.push("4. Contrôles véhicule :")
+
+lignes.push("4. Contrôles véhicule :")
 lignes.push("Carrosserie / vitrage : "+(notes.carrosserie || "-"))
 lignes.push("Roues tracteur : "+(notes.roues || "-"))
 lignes.push("Taches : "+(notes.taches || "-"))
-lines.push("5. Contrôles remorque :")
+
+lignes.push("5. Contrôles remorque :")
 lignes.push("Caisse remorque : "+(notes.caisse || "-"))
 lignes.push("Roues remorque : "+(notes.rroues || "-"))
 lignes.push("Chargement remorque : "+(notes.rchargement || "-"))
+
 lignes.push("5. Mise en marche moteur : "+(notes.moteur || "-"))
+
 if(notes.position){
+
 if(notes.position<5)
 lignes.push("6. Positionnement : "+notes.position+" tentative(s)")
 else
 lignes.push("6. Positionnement : 5+ tentatives (éliminatoire)")
+
 }
+
 lignes.push("7. Compatibilité : "+(notes.compat || "-"))
 lignes.push("8. Attelage : "+(notes.attelage || "-"))
 lignes.push("9. Dimensions / poids : "+(notes.dimensions || "-"))
-lignes.push("10.Feux : "+(notes.feux || "-"))
+lignes.push("10. Feux : "+(notes.feux || "-"))
 
 lignes.push("11. Thème : "+(notes.theme || "-"))
 lignes.push("12. Interrogation orale : "+(notes.orale || "-"))
 
-lignes.push("Manœuvre 1 : "+(notes.m1||"-"))
-if(notes.temps_m1) lignes.push("Temps manœuvre 1 : "+notes.temps_m1)
+lignes.push("Manœuvre 1 : "+(notes.m1 || "-"))
 
-lignes.push("Manœuvre 2 : "+(notes.m2||"-"))
-if(notes.temps_m2) lignes.push("Temps manœuvre 2 : "+notes.temps_m2)
+if(notes.depart_m1)
+lignes.push("Départ manœuvre 1 : "+notes.depart_m1)
+
+if(notes.arret_m1)
+lignes.push("Arrêt manœuvre 1 : "+notes.arret_m1)
+
+if(notes.temps_m1)
+lignes.push("Temps manœuvre 1 : "+notes.temps_m1)
+
+lignes.push("Manœuvre 2 : "+(notes.m2 || "-"))
+
+if(notes.depart_m2)
+lignes.push("Départ manœuvre 2 : "+notes.depart_m2)
+
+if(notes.arret_m2)
+lignes.push("Arrêt manœuvre 2 : "+notes.arret_m2)
+
+if(notes.temps_m2)
+lignes.push("Temps manœuvre 2 : "+notes.temps_m2)
 
 lignes.push("13. Dételage : "+(notes.detelage || "-"))
 lignes.push("Gestes et postures : "+(notes.posture || "-"))
@@ -600,9 +594,16 @@ lignes.push("Gestes et postures : "+(notes.posture || "-"))
 let total=0
 
 for(let key in notes){
-if(key==="position" || key.startsWith("temps_")) continue
+
+if(key==="position" ||
+key.startsWith("temps_") ||
+key.startsWith("depart_") ||
+key.startsWith("arret_")) continue
+
 let v=parseInt(notes[key])
+
 if(!isNaN(v)) total+=v
+
 }
 
 let manoeuvreOK=(notes.m1==="Réussie"||notes.m2==="Réussie")
@@ -610,9 +611,11 @@ let manoeuvreOK=(notes.m1==="Réussie"||notes.m2==="Réussie")
 let statut="INSUFFISANT"
 
 if(Object.values(notes).includes("E") || notes.position===5)
+
 statut="ELIMINE"
 
 else if(total>=25 && manoeuvreOK)
+
 statut="FAVORABLE"
 
 let message="RÉSULTAT EXAMEN BLANC\n\n"
@@ -630,6 +633,10 @@ message+="\n\nCommentaire :\n"+commentaire
 return message
 
 }
+
+/* ==============================
+   ENVOI
+   ============================== */
 
 function envoyer(){
 
@@ -651,6 +658,10 @@ emailjs.send("service_9mvyi0i","template_z3p6rhk",params)
 
 }
 
+/* ==============================
+   NOUVEL ÉLÈVE
+   ============================== */
+
 function nouvelEleve(){
 
 notes={}
@@ -660,9 +671,14 @@ document.querySelectorAll("input,textarea").forEach(i=>i.value="")
 document.querySelectorAll(".btn").forEach(b=>b.classList.remove("selected"))
 
 document.getElementById("result").innerText="Total : 0 / 23"
+document.getElementById("result").className="result"
 
 timers={1:0,2:0}
-running={}
+
+running={1:false,2:false}
+
+startTimes={1:null,2:null}
+stopTimes={1:null,2:null}
 
 clearInterval(intervals[1])
 clearInterval(intervals[2])
@@ -670,9 +686,12 @@ clearInterval(intervals[2])
 document.getElementById("timer1").innerText="00:00"
 document.getElementById("timer2").innerText="00:00"
 
+/* Réinitialisation du positionnement */
+
+document.getElementById("positionnement").value=1
+document.getElementById("positionLabel").innerText="1 tentative"
+
 }
 
-</script>
-
-</body>
+</script></body>
 </html>
